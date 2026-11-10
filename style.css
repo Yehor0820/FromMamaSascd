@@ -1,0 +1,58 @@
+* { box-sizing: border-box; margin: 0; }
+html, body { height: 100%; }
+
+body {
+  background: #f6e7da;
+  color: #5b4636;
+  font-family: "Caveat", "Segoe Print", "Comic Sans MS", cursive;
+  overflow: hidden;
+}
+
+[hidden] { display: none !important; }
+
+.scene { position: fixed; inset: 0; }
+
+canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Лист з адаптивною шириною */
+.letter {
+  position: absolute;
+  left: 6vw;
+  top: 6vh;
+  width: min(88vw, 420px);
+  max-height: 65vh;
+  overflow-y: auto;
+  font-size: clamp(1.1rem, 3.8vw, 1.6rem);
+  line-height: 1.3;
+}
+.letter p { margin-bottom: .9em; }
+
+/* Лічильник */
+.counter {
+  position: absolute;
+  left: 6vw;
+  bottom: 6vh;
+  max-width: 88vw;
+  font-size: clamp(1.2rem, 4vw, 1.6rem);
+  animation: fadein 1.2s both;
+}
+.counter span { display: block; opacity: .8; }
+.counter b {
+  display: block;
+  font-size: clamp(1.4rem, 5.2vw, 2rem);
+  color: #b3001b;
+  font-weight: 700;
+}
+
+@keyframes fadein { from { opacity: 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .counter { animation: none; }
+}
+
+ 
